@@ -258,6 +258,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 4.0.0)
   factory_girl_rails
+  guard
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
