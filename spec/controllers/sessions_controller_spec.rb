@@ -6,13 +6,8 @@ describe SessionsController do
       get :create, provider: 'facebook'
       @user = User.where(uid: '1234567', provider: 'facebook').first
     end
-    it "should create an user object" do
+    it "should load an user object in the session" do
       expect(session[:user_id]).to be_equal(@user.id)
-    end
-    
-    it "should load an user object" do
-      expect(session[:user_id]).to be_equal(@user.id)
-      expect(User.count).to be_equal(1)
     end
     
     it "should redirect show user" do
