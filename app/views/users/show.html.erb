@@ -1,0 +1,7 @@
+<h1>Hey <%= current_user.name %></h1>
+<p class="lead">And these are your friends</p>
+<ul>
+  <% @friends.each do |friend| %>
+  <li><%= friend["name"] %></li>
+  <% end %>
+</ul>

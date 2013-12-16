@@ -1,8 +1,8 @@
 GimmeABreak::Application.routes.draw do
-  resources :users
+  resources :users, only: [:show]
   
-  get 'auth/:provider/callback', to: 'sessions#create', as: 'callback'
-  get 'auth/failure', to: redirect('/')
+  match 'auth/:provider/callback', to: 'sessions#create', as: 'callback', via: [:get, :post]
+  get 'auth/failure', to: "sessions#failure"
   get 'signout', to: 'sessions#destroy', as: 'signout', via: [:delete]
   
   root to: "application#home"

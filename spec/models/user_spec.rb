@@ -11,8 +11,4 @@ describe User do
       end
     end
   end
-  
-  describe "from_omniauth method" do
-    pending 
-  end
 end
